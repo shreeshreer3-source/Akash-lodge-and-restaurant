@@ -413,7 +413,7 @@ a {
 }
 
 .room-card {
-    overflow: hidden;
+    overflow: visible;
 }
 
 .room-image {
@@ -559,49 +559,114 @@ a {
 .footer {
     background: var(--primary-navy);
     color: var(--white);
-    padding: 60px 0 30px;
+    padding: 80px 0 40px;
+}
+
+.footer-container {
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 .footer-card {
-    padding: 0;
-    border: none;
-    box-shadow: none;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.35s ease;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
 }
 
 .footer-card h3,
 .footer-card h4 {
     margin-bottom: 16px;
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 600;
+    opacity: 1;
 }
 
+.footer-card h3 i {
+    color: var(--accent-gold);
+    margin-right: 8px;
+}
+
+.footer-card p,
 .footer-card a,
-.footer-card span,
-.footer-card p {
-    color: rgba(255, 255, 255, 0.78);
+.footer-card span {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+    font-size: 1rem;
+    opacity: 1;
+    margin-bottom: 8px;
+    display: inline-block;
 }
 
-.footer-card a:hover,
-.footer-card span:hover {
+.footer-card p {
+    width: 100%;
+}
+
+.footer-card a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-card a:hover {
+    color: var(--accent-gold);
+}
+
+.footer-card a:hover span {
     color: var(--accent-gold);
 }
 
 .payment-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
 }
 
 .payment-icons span {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--white);
+    opacity: 1;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.payment-icons span:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--accent-gold);
+}
+
+.payment-icons span i {
+    color: var(--accent-gold);
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding-top: 22px;
+    padding-top: 32px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.98rem;
 }
 
 /* Floating Buttons */
@@ -684,9 +749,12 @@ a {
     .highlight-grid,
     .rooms-grid,
     .amenities-grid,
-    .gallery-grid,
-    .footer-container {
+    .gallery-grid {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
 
     .contact-wrapper {
@@ -746,6 +814,25 @@ a {
     .contact-map {
         min-height: 320px;
     }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-card {
+        padding: 28px;
+    }
+
+    .footer-card h3,
+    .footer-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer-card p,
+    .footer-card a {
+        font-size: 0.95rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -772,5 +859,29 @@ a {
 
     .footer-container {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-card {
+        padding: 24px;
+    }
+
+    .footer-card h3,
+    .footer-card h4 {
+        font-size: 1rem;
+    }
+
+    .footer-card p,
+    .footer-card a {
+        font-size: 0.9rem;
+    }
+
+    .payment-icons {
+        gap: 10px;
+    }
+
+    .payment-icons span {
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
 }
