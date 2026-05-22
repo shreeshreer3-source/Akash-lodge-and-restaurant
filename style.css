@@ -188,7 +188,7 @@ a {
 .hero-background {
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('./images/hotel-front.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('hotel-front.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
